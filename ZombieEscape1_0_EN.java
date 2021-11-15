@@ -40,7 +40,13 @@ public class ZombieEscape1_0 {
         do {
             System.out.println("Please choose difficulty:\n"
                     + "1: 8 x 8 sized room\n2: 16 x 16 sized room\n3: 24 x 24 sized room");
-            lvl = insert.nextInt();
+            try {
+            	lvl = insert.nextInt();
+            } catch (Exception e) {
+            	System.out.println("Please only choose from the given numbers");
+            	insert = new Scanner(System.in);
+            	lvl = insert.nextInt();
+            } 
         } while (lvl != 1 && lvl != 2 && lvl != 3);
         switch (lvl) {
             case 1:

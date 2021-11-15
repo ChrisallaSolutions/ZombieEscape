@@ -40,7 +40,13 @@ public class ZombieEscape1_0 {
         do {
             System.out.println("Bitte Schwierigkeitsgrad wählen:\n"
                     + "1: 8 x 8 großer Raum\n2: 16 x 16 großer Raum\n3: 24 x 24 großer Raum");
-            lvl = eingabe.nextInt();
+            try {
+            	lvl = eingabe.nextInt();
+            } catch (Exception e) {
+            	System.out.println("Bitte nur die Auswahl an Zahlen wählen");
+            	eingabe = new Scanner(System.in);
+            	lvl = eingabe.nextInt();
+            } 
         } while (lvl != 1 && lvl != 2 && lvl != 3);
         switch (lvl) {
             case 1:
